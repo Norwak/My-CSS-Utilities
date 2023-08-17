@@ -1,9 +1,28 @@
 /* // */
+// Media Variables
+/* // */
+$fhd: 1919px // Full HD
+$lpt: 1599px // LaPTop
+$hdf: 1230px // High DeFinition
+$btb: 991px // Big TaBlet
+$stb: 767px // Small TaBlet
+$mbl: 450px // MoBiLE
+
+  
+/* // */
 // Containers
 /* // */
 
 .container-fluid
   width: 100%
+  padding: 0 15px
+
+
+.container-5-steps
+  position: relative
+  max-width: 1920px
+  width: 100%
+  margin: 0 auto
   padding: 0 15px
 
 .container-3-steps
@@ -20,13 +39,63 @@
   margin: 0 auto
   padding: 0 15px
 
-@media (max-width: 1230px)
+.container-narrow
+  position: relative
+  max-width: 780px
+  width: 100%
+  margin: 0 auto
+  padding: 0 15px
+
+// DEPRECATED
+// .container-half
+//   display: flex
+//   flex-wrap: wrap
+//   &--left
+//     width: 50%
+//     margin-left: 0
+//     margin-right: auto
+//   &--right
+//     width: 50%
+//     margin-left: auto
+//     margin-right: 0
+
+@media (max-width: $fhd)
+  .container-5-steps
+    max-width: 1600px
+
+@media (max-width: $lpt)
+  .container-5-steps
+    max-width: 1230px
+
+@media (max-width: $hdf)
+  .container-5-steps
+    max-width: 992px
+
   .container-3-steps
     max-width: 768px
 
-@media (max-width: 767px)
+@media (max-width: $btb)
+  .container-5-steps
+    max-width: 768px
+
+@media (max-width: $stb)
+  .container-5-steps
+    max-width: 450px
+
   .container-3-steps
-    max-width: 400px
+    max-width: 450px
+
+
+
+/* // */
+// Extends
+/* // */
+.fill-parent
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
 
 
 
@@ -911,23 +980,23 @@ img.cover
 /* // */
 
 // Setting amount of cols in each row
-.cols-1 > *
+.cols1 > *
   width: 100%
-.cols-2 > *
+.cols2 > *
   width: 50%
-.cols-3 > *
+.cols3 > *
   width: 33.3%
-.cols-4 > *
+.cols4 > *
   width: 25%
-.cols-5 > *
+.cols5 > *
   width: 20%
-.cols-6 > *
+.cols6 > *
   width: 16.66%
-.cols-7 > *
+.cols7 > *
   width: 14.2%
 
 // Setting gap between cols WITHOUT bottom gap
-.gap-0
+.gap0
   margin-left: 0
   margin-right: 0
   & > *
@@ -935,7 +1004,7 @@ img.cover
     padding-left: 0
     padding-right: 0
 
-.gap-5
+.gap5
   margin-left: -2.5px
   margin-right: -2.5px
   & > *
@@ -943,7 +1012,7 @@ img.cover
     padding-left: 2.5px
     padding-right: 2.5px
 
-.gap-10
+.gap10
   margin-left: -5px
   margin-right: -5px
   & > *
@@ -951,7 +1020,7 @@ img.cover
     padding-left: 5px
     padding-right: 5px
 
-.gap-15
+.gap15
   margin-left: -7.5px
   margin-right: -7.5px
   & > *
@@ -959,7 +1028,7 @@ img.cover
     padding-left: 7.5px
     padding-right: 7.5px
 
-.gap-20
+.gap20
   margin-left: -10px
   margin-right: -10px
   & > *
@@ -967,7 +1036,7 @@ img.cover
     padding-left: 10px
     padding-right: 10px
 
-.gap-25
+.gap25
   margin-left: -12.5px
   margin-right: -12.5px
   & > *
@@ -975,7 +1044,7 @@ img.cover
     padding-left: 12.5px
     padding-right: 12.5px
 
-.gap-30
+.gap30
   margin-left: -15px
   margin-right: -15px
   & > *
@@ -983,7 +1052,7 @@ img.cover
     padding-left: 15px
     padding-right: 15px
 
-.gap-40
+.gap40
   margin-left: -20px
   margin-right: -20px
   & > *
@@ -991,7 +1060,7 @@ img.cover
     padding-left: 20px
     padding-right: 20px
 
-.gap-50
+.gap50
   margin-left: -25px
   margin-right: -25px
   & > *
@@ -1000,7 +1069,7 @@ img.cover
     padding-right: 25px
 
 // Setting gap between cols WITH bottom gap
-.gap-0-b
+.gap0b
   margin-left: 0
   margin-right: 0
   & > *
@@ -1008,7 +1077,7 @@ img.cover
     padding-left: 0
     padding-right: 0
 
-.gap-5-b
+.gap5b
   margin-left: -2.5px
   margin-right: -2.5px
   & > *
@@ -1016,7 +1085,7 @@ img.cover
     padding-left: 2.5px
     padding-right: 2.5px
 
-.gap-10-b
+.gap10b
   margin-left: -5px
   margin-right: -5px
   & > *
@@ -1024,7 +1093,7 @@ img.cover
     padding-left: 5px
     padding-right: 5px
 
-.gap-15-b
+.gap15b
   margin-left: -7.5px
   margin-right: -7.5px
   & > *
@@ -1032,7 +1101,7 @@ img.cover
     padding-left: 7.5px
     padding-right: 7.5px
 
-.gap-20-b
+.gap20b
   margin-left: -10px
   margin-right: -10px
   & > *
@@ -1040,7 +1109,7 @@ img.cover
     padding-left: 10px
     padding-right: 10px
 
-.gap-25-b
+.gap25b
   margin-left: -12.5px
   margin-right: -12.5px
   & > *
@@ -1048,7 +1117,7 @@ img.cover
     padding-left: 12.5px
     padding-right: 12.5px
 
-.gap-30-b
+.gap30b
   margin-left: -15px
   margin-right: -15px
   & > *
@@ -1056,7 +1125,7 @@ img.cover
     padding-left: 15px
     padding-right: 15px
 
-.gap-40-b
+.gap40b
   margin-left: -20px
   margin-right: -20px
   & > *
@@ -1064,7 +1133,7 @@ img.cover
     padding-left: 20px
     padding-right: 20px
 
-.gap-50-b
+.gap50b
   margin-left: -25px
   margin-right: -25px
   & > *
@@ -1087,108 +1156,108 @@ img.cover
 
 /* IE fix */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
-  .cols-2.gap-05 > *
+  .cols2.gap05 > *
     width: 49%
-  .cols-3.gap-05 > *
+  .cols3.gap05 > *
     width: 32.4%
-  .cols-4.gap-05 > *
+  .cols4.gap05 > *
     width: 24%
-  .cols-5.gap-05 > *
+  .cols5.gap05 > *
     width: 19%
-  .cols-6.gap-05 > *
+  .cols6.gap05 > *
     width: 15.6%
-  .cols-7.gap-05 > *
+  .cols7.gap05 > *
     width: 13.2%
 
-  .cols-2.gap-1 > *
+  .cols2.gap1 > *
     width: 48.6%
-  .cols-3.gap-1 > *
+  .cols3.gap1 > *
     width: 31.5%
-  .cols-4.gap-1 > *
+  .cols4.gap1 > *
     width: 23%
-  .cols-5.gap-1 > *
+  .cols5.gap1 > *
     width: 18.6%
-  .cols-6.gap-1 > *
+  .cols6.gap1 > *
     width: 15.3%
-  .cols-7.gap-1 > *
+  .cols7.gap1 > *
     width: 12.9%
 
-  .cols-2.gap-15 > *
+  .cols2.gap15 > *
     width: 48%
-  .cols-3.gap-15 > *
+  .cols3.gap15 > *
     width: 30.6%
-  .cols-4.gap-15 > *
+  .cols4.gap15 > *
     width: 22%
-  .cols-5.gap-15 > *
+  .cols5.gap15 > *
     width: 18%
-  .cols-6.gap-15 > *
+  .cols6.gap15 > *
     width: 14.7%
-  .cols-7.gap-15 > *
+  .cols7.gap15 > *
     width: 12.3%
 
-  .cols-2.gap-2 > *
+  .cols2.gap2 > *
     width: 47.4%
-  .cols-3.gap-2 > *
+  .cols3.gap2 > *
     width: 29.7%
-  .cols-4.gap-2 > *
+  .cols4.gap2 > *
     width: 21.9%
-  .cols-5.gap-2 > *
+  .cols5.gap2 > *
     width: 17.4%
-  .cols-6.gap-2 > *
+  .cols6.gap2 > *
     width: 14%
-  .cols-7.gap-2 > *
+  .cols7.gap2 > *
     width: 11.6%
 
-  .cols-2.gap-25 > *
+  .cols2.gap25 > *
     width: 46.7%
-  .cols-3.gap-25 > *
+  .cols3.gap25 > *
     width: 29.7%
-  .cols-4.gap-25 > *
+  .cols4.gap25 > *
     width: 21.7%
-  .cols-5.gap-25 > *
+  .cols5.gap25 > *
     width: 16.7%
-  .cols-6.gap-25 > *
+  .cols6.gap25 > *
     width: 13.4%
-  .cols-7.gap-25 > *
+  .cols7.gap25 > *
     width: 11%
 
-  .cols-2.gap-3 > *
+  .cols2.gap3 > *
     width: 46.1%
-  .cols-3.gap-3 > *
+  .cols3.gap3 > *
     width: 29.4%
-  .cols-4.gap-3 > *
+  .cols4.gap3 > *
     width: 21.1%
-  .cols-5.gap-3 > *
+  .cols5.gap3 > *
     width: 16.1%
-  .cols-6.gap-3 > *
+  .cols6.gap3 > *
     width: 12.8%
-  .cols-7.gap-3 > *
+  .cols7.gap3 > *
     width: 10.4%
 
-  .cols-2.gap-4 > *
+  .cols2.gap4 > *
     width: 44.9%
-  .cols-3.gap-4 > *
+  .cols3.gap4 > *
     width: 28.2%
-  .cols-4.gap-4 > *
+  .cols4.gap4 > *
     width: 19.9%
-  .cols-5.gap-4 > *
+  .cols5.gap4 > *
     width: 14.9%
-  .cols-6.gap-4 > *
+  .cols6.gap4 > *
     width: 11.6%
-  .cols-7.gap-4 > *
+  .cols7.gap4 > *
     width: 9.2%
 
-  .cols-2.gap-5 > *
+  .cols2.gap5 > *
     width: 43.7%
-  .cols-3.gap-5 > *
+  .cols3.gap5 > *
     width: 27%
-  .cols-4.gap-5 > *
+  .cols4.gap5 > *
     width: 18.7%
-  .cols-5.gap-5 > *
+  .cols5.gap5 > *
     width: 13.7%
-  .cols-6.gap-5 > *
+  .cols6.gap5 > *
     width: 10.4%
-  .cols-7.gap-5 > *
+  .cols7.gap5 > *
     width: 8%
 
   .button
@@ -1201,10 +1270,385 @@ img.cover
 
 
 /* // */
+// Media for FHD size
+/* // */
+
+@media (max-width: $fhd)
+
+  .fhd-tl
+    text-align: left
+  .fhd-tc
+    text-align: center
+  .fhd-tr
+    text-align: right
+  .fhd-tj
+    text-align: justify
+
+
+
+  .fhd-flex-tl
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+
+  .fhd-flex-tc
+    display: flex
+    justify-content: center
+    align-items: flex-start
+
+  .fhd-flex-tr
+    display: flex
+    justify-content: flex-end
+    align-items: flex-start
+
+  .fhd-flex-tse
+    display: flex
+    justify-content: space-evenly
+    align-items: flex-start
+
+  .fhd-flex-tsb
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+
+  .fhd-flex-tsa
+    display: flex
+    justify-content: space-around
+    align-items: flex-start
+
+  .fhd-flex-cl
+    display: flex
+    justify-content: flex-start
+    align-items: center
+
+  .fhd-flex-cc
+    display: flex
+    justify-content: center
+    align-items: center
+
+  .fhd-flex-cr
+    display: flex
+    justify-content: flex-end
+    align-items: center
+
+  .fhd-flex-cse
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+
+  .fhd-flex-csb
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  .fhd-flex-csa
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+  .fhd-flex-bl
+    display: flex
+    justify-content: flex-start
+    align-items: flex-end
+
+  .fhd-flex-bc
+    display: flex
+    justify-content: center
+    align-items: flex-end
+
+  .fhd-flex-br
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+
+  .fhd-flex-bse
+    display: flex
+    justify-content: space-evenly
+    align-items: flex-end
+
+  .fhd-flex-bsb
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+
+  .fhd-flex-bsa
+    display: flex
+    justify-content: space-around
+    align-items: flex-end
+
+  .fhd-flex-sl
+    display: flex
+    justify-content: flex-start
+    align-items: stretch
+
+  .fhd-flex-sc
+    display: flex
+    justify-content: center
+    align-items: stretch
+
+  .fhd-flex-sr
+    display: flex
+    justify-content: flex-end
+    align-items: stretch
+
+  .fhd-flex-sse
+    display: flex
+    justify-content: space-evenly
+    align-items: stretch
+
+  .fhd-flex-ssb
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+
+  .fhd-flex-ssa
+    display: flex
+    justify-content: space-around
+    align-items: stretch
+
+
+
+  .fhd-grow
+    flex-grow: 1
+    flex-shrink: 1
+  .fhd-noshrink
+    flex-grow: 0
+    flex-shrink: 0
+  .fhd-default
+    flex-grow: 0
+    flex-shrink: 1
+
+
+
+  .fhd-flex-gl
+    display: flex
+    flex-wrap: wrap
+
+  .fhd-flex-gc
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+  
+  .fhd-flex-gr
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-end
+  
+  .fhd-flex-gse
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+  
+  .fhd-flex-gsb
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  
+  .fhd-flex-gsa
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+
+
+
+  .fhd-cols1 > *
+    width: 100%
+  .fhd-cols2 > *
+    width: 50%
+  .fhd-cols3 > *
+    width: 33.3%
+  .fhd-cols4 > *
+    width: 25%
+  .fhd-cols5 > *
+    width: 20%
+  .fhd-cols6 > *
+    width: 16.66%
+  .fhd-cols7 > *
+    width: 14.2%
+
+
+
+  .fhd-gap0
+    margin-left: 0
+    margin-right: 0
+    & > *
+      padding-bottom: 0
+      padding-left: 0
+      padding-right: 0
+
+  .fhd-gap5
+    margin-left: -2.5px
+    margin-right: -2.5px
+    & > *
+      padding-bottom: 0
+      padding-left: 2.5px
+      padding-right: 2.5px
+
+  .fhd-gap10
+    margin-left: -5px
+    margin-right: -5px
+    & > *
+      padding-bottom: 0
+      padding-left: 5px
+      padding-right: 5px
+
+  .fhd-gap15
+    margin-left: -7.5px
+    margin-right: -7.5px
+    & > *
+      padding-bottom: 0
+      padding-left: 7.5px
+      padding-right: 7.5px
+
+  .fhd-gap20
+    margin-left: -10px
+    margin-right: -10px
+    & > *
+      padding-bottom: 0
+      padding-left: 10px
+      padding-right: 10px
+
+  .fhd-gap25
+    margin-left: -12.5px
+    margin-right: -12.5px
+    & > *
+      padding-bottom: 0
+      padding-left: 12.5px
+      padding-right: 12.5px
+
+  .fhd-gap30
+    margin-left: -15px
+    margin-right: -15px
+    & > *
+      padding-bottom: 0
+      padding-left: 15px
+      padding-right: 15px
+
+  .fhd-gap40
+    margin-left: -20px
+    margin-right: -20px
+    & > *
+      padding-bottom: 0
+      padding-left: 20px
+      padding-right: 20px
+
+  .fhd-gap50
+    margin-left: -25px
+    margin-right: -25px
+    & > *
+      padding-bottom: 0
+      padding-left: 25px
+      padding-right: 25px
+
+
+  
+  .fhd-gap0b
+    margin-left: 0
+    margin-right: 0
+    & > *
+      padding-bottom: 0
+      padding-left: 0
+      padding-right: 0
+
+  .fhd-gap5b
+    margin-left: -2.5px
+    margin-right: -2.5px
+    & > *
+      padding-bottom: 5px
+      padding-left: 2.5px
+      padding-right: 2.5px
+
+  .fhd-gap10b
+    margin-left: -5px
+    margin-right: -5px
+    & > *
+      padding-bottom: 10px
+      padding-left: 5px
+      padding-right: 5px
+
+  .fhd-gap15b
+    margin-left: -7.5px
+    margin-right: -7.5px
+    & > *
+      padding-bottom: 15px
+      padding-left: 7.5px
+      padding-right: 7.5px
+
+  .fhd-gap20b
+    margin-left: -10px
+    margin-right: -10px
+    & > *
+      padding-bottom: 20px
+      padding-left: 10px
+      padding-right: 10px
+
+  .fhd-gap25b
+    margin-left: -12.5px
+    margin-right: -12.5px
+    & > *
+      padding-bottom: 25px
+      padding-left: 12.5px
+      padding-right: 12.5px
+
+  .fhd-gap30b
+    margin-left: -15px
+    margin-right: -15px
+    & > *
+      padding-bottom: 30px
+      padding-left: 15px
+      padding-right: 15px
+
+  .fhd-gap40b
+    margin-left: -20px
+    margin-right: -20px
+    & > *
+      padding-bottom: 40px
+      padding-left: 20px
+      padding-right: 20px
+
+  .fhd-gap50b
+    margin-left: -25px
+    margin-right: -25px
+    & > *
+      padding-bottom: 50px
+      padding-left: 25px
+      padding-right: 25px
+
+
+
+  .fhd-row
+    flex-direction: row
+
+  .fhd-rowrev
+    flex-direction: row-reverse
+  
+  .fhd-col
+    flex-direction: column
+
+  .fhd-colrev
+    flex-direction: column-reverse
+
+ 
+
+  .fhd-dn
+    display: none
+  .fhd-db
+    display: block
+  .fhd-dib
+    display: inline-block
+
+
+
+  .fhd-container-half--disabled
+    width: 100%
+
+
+
+/* // */
 // Media for laptop size
 /* // */
 
-@media (max-width: 1230px)
+@media (max-width: $lpt)
 
   .lpt-tl
     text-align: left
@@ -1382,24 +1826,24 @@ img.cover
 
 
 
-  .lpt-cols-1 > *
+  .lpt-cols1 > *
     width: 100%
-  .lpt-cols-2 > *
+  .lpt-cols2 > *
     width: 50%
-  .lpt-cols-3 > *
+  .lpt-cols3 > *
     width: 33.3%
-  .lpt-cols-4 > *
+  .lpt-cols4 > *
     width: 25%
-  .lpt-cols-5 > *
+  .lpt-cols5 > *
     width: 20%
-  .lpt-cols-6 > *
+  .lpt-cols6 > *
     width: 16.66%
-  .lpt-cols-7 > *
+  .lpt-cols7 > *
     width: 14.2%
 
 
 
-  .lpt-gap-0
+  .lpt-gap0
     margin-left: 0
     margin-right: 0
     & > *
@@ -1407,7 +1851,7 @@ img.cover
       padding-left: 0
       padding-right: 0
 
-  .lpt-gap-5
+  .lpt-gap5
     margin-left: -2.5px
     margin-right: -2.5px
     & > *
@@ -1415,7 +1859,7 @@ img.cover
       padding-left: 2.5px
       padding-right: 2.5px
 
-  .lpt-gap-10
+  .lpt-gap10
     margin-left: -5px
     margin-right: -5px
     & > *
@@ -1423,7 +1867,7 @@ img.cover
       padding-left: 5px
       padding-right: 5px
 
-  .lpt-gap-15
+  .lpt-gap15
     margin-left: -7.5px
     margin-right: -7.5px
     & > *
@@ -1431,7 +1875,7 @@ img.cover
       padding-left: 7.5px
       padding-right: 7.5px
 
-  .lpt-gap-20
+  .lpt-gap20
     margin-left: -10px
     margin-right: -10px
     & > *
@@ -1439,7 +1883,7 @@ img.cover
       padding-left: 10px
       padding-right: 10px
 
-  .lpt-gap-25
+  .lpt-gap25
     margin-left: -12.5px
     margin-right: -12.5px
     & > *
@@ -1447,7 +1891,7 @@ img.cover
       padding-left: 12.5px
       padding-right: 12.5px
 
-  .lpt-gap-30
+  .lpt-gap30
     margin-left: -15px
     margin-right: -15px
     & > *
@@ -1455,7 +1899,7 @@ img.cover
       padding-left: 15px
       padding-right: 15px
 
-  .lpt-gap-40
+  .lpt-gap40
     margin-left: -20px
     margin-right: -20px
     & > *
@@ -1463,7 +1907,7 @@ img.cover
       padding-left: 20px
       padding-right: 20px
 
-  .lpt-gap-50
+  .lpt-gap50
     margin-left: -25px
     margin-right: -25px
     & > *
@@ -1473,7 +1917,7 @@ img.cover
 
 
   
-  .lpt-gap-0-b
+  .lpt-gap0b
     margin-left: 0
     margin-right: 0
     & > *
@@ -1481,7 +1925,7 @@ img.cover
       padding-left: 0
       padding-right: 0
 
-  .lpt-gap-5-b
+  .lpt-gap5b
     margin-left: -2.5px
     margin-right: -2.5px
     & > *
@@ -1489,7 +1933,7 @@ img.cover
       padding-left: 2.5px
       padding-right: 2.5px
 
-  .lpt-gap-10-b
+  .lpt-gap10b
     margin-left: -5px
     margin-right: -5px
     & > *
@@ -1497,7 +1941,7 @@ img.cover
       padding-left: 5px
       padding-right: 5px
 
-  .lpt-gap-15-b
+  .lpt-gap15b
     margin-left: -7.5px
     margin-right: -7.5px
     & > *
@@ -1505,7 +1949,7 @@ img.cover
       padding-left: 7.5px
       padding-right: 7.5px
 
-  .lpt-gap-20-b
+  .lpt-gap20b
     margin-left: -10px
     margin-right: -10px
     & > *
@@ -1513,7 +1957,7 @@ img.cover
       padding-left: 10px
       padding-right: 10px
 
-  .lpt-gap-25-b
+  .lpt-gap25b
     margin-left: -12.5px
     margin-right: -12.5px
     & > *
@@ -1521,7 +1965,7 @@ img.cover
       padding-left: 12.5px
       padding-right: 12.5px
 
-  .lpt-gap-30-b
+  .lpt-gap30b
     margin-left: -15px
     margin-right: -15px
     & > *
@@ -1529,7 +1973,7 @@ img.cover
       padding-left: 15px
       padding-right: 15px
 
-  .lpt-gap-40-b
+  .lpt-gap40b
     margin-left: -20px
     margin-right: -20px
     & > *
@@ -1537,7 +1981,7 @@ img.cover
       padding-left: 20px
       padding-right: 20px
 
-  .lpt-gap-50-b
+  .lpt-gap50b
     margin-left: -25px
     margin-right: -25px
     & > *
@@ -1569,12 +2013,392 @@ img.cover
     display: inline-block
 
 
+  
+  .lpt-container-half--disabled
+    width: 100%
+
+
+
+/* // */
+// Media for HD size
+/* // */
+
+@media (max-width: $hdf)
+
+  .hdf-tl
+    text-align: left
+  .hdf-tc
+    text-align: center
+  .hdf-tr
+    text-align: right
+  .hdf-tj
+    text-align: justify
+
+
+
+  .hdf-flex-tl
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+
+  .hdf-flex-tc
+    display: flex
+    justify-content: center
+    align-items: flex-start
+
+  .hdf-flex-tr
+    display: flex
+    justify-content: flex-end
+    align-items: flex-start
+
+  .hdf-flex-tse
+    display: flex
+    justify-content: space-evenly
+    align-items: flex-start
+
+  .hdf-flex-tsb
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+
+  .hdf-flex-tsa
+    display: flex
+    justify-content: space-around
+    align-items: flex-start
+
+  .hdf-flex-cl
+    display: flex
+    justify-content: flex-start
+    align-items: center
+
+  .hdf-flex-cc
+    display: flex
+    justify-content: center
+    align-items: center
+
+  .hdf-flex-cr
+    display: flex
+    justify-content: flex-end
+    align-items: center
+
+  .hdf-flex-cse
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+
+  .hdf-flex-csb
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  .hdf-flex-csa
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+  .hdf-flex-bl
+    display: flex
+    justify-content: flex-start
+    align-items: flex-end
+
+  .hdf-flex-bc
+    display: flex
+    justify-content: center
+    align-items: flex-end
+
+  .hdf-flex-br
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+
+  .hdf-flex-bse
+    display: flex
+    justify-content: space-evenly
+    align-items: flex-end
+
+  .hdf-flex-bsb
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+
+  .hdf-flex-bsa
+    display: flex
+    justify-content: space-around
+    align-items: flex-end
+
+  .hdf-flex-sl
+    display: flex
+    justify-content: flex-start
+    align-items: stretch
+
+  .hdf-flex-sc
+    display: flex
+    justify-content: center
+    align-items: stretch
+
+  .hdf-flex-sr
+    display: flex
+    justify-content: flex-end
+    align-items: stretch
+
+  .hdf-flex-sse
+    display: flex
+    justify-content: space-evenly
+    align-items: stretch
+
+  .hdf-flex-ssb
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+
+  .hdf-flex-ssa
+    display: flex
+    justify-content: space-around
+    align-items: stretch
+
+
+
+  .hdf-grow
+    flex-grow: 1
+    flex-shrink: 1
+  .hdf-noshrink
+    flex-grow: 0
+    flex-shrink: 0
+  .hdf-default
+    flex-grow: 0
+    flex-shrink: 1
+
+
+
+  .hdf-flex-gl
+    display: flex
+    flex-wrap: wrap
+
+  .hdf-flex-gc
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+  
+  .hdf-flex-gr
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-end
+  
+  .hdf-flex-gse
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+  
+  .hdf-flex-gsb
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  
+  .hdf-flex-gsa
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+
+
+
+  .hdf-cols1 > *
+    width: 100%
+  .hdf-cols2 > *
+    width: 50%
+  .hdf-cols3 > *
+    width: 33.3%
+  .hdf-cols4 > *
+    width: 25%
+  .hdf-cols5 > *
+    width: 20%
+  .hdf-cols6 > *
+    width: 16.66%
+  .hdf-cols7 > *
+    width: 14.2%
+
+
+
+  .hdf-gap0
+    margin-left: 0
+    margin-right: 0
+    & > *
+      padding-bottom: 0
+      padding-left: 0
+      padding-right: 0
+
+  .hdf-gap5
+    margin-left: -2.5px
+    margin-right: -2.5px
+    & > *
+      padding-bottom: 0
+      padding-left: 2.5px
+      padding-right: 2.5px
+
+  .hdf-gap10
+    margin-left: -5px
+    margin-right: -5px
+    & > *
+      padding-bottom: 0
+      padding-left: 5px
+      padding-right: 5px
+
+  .hdf-gap15
+    margin-left: -7.5px
+    margin-right: -7.5px
+    & > *
+      padding-bottom: 0
+      padding-left: 7.5px
+      padding-right: 7.5px
+
+  .hdf-gap20
+    margin-left: -10px
+    margin-right: -10px
+    & > *
+      padding-bottom: 0
+      padding-left: 10px
+      padding-right: 10px
+
+  .hdf-gap25
+    margin-left: -12.5px
+    margin-right: -12.5px
+    & > *
+      padding-bottom: 0
+      padding-left: 12.5px
+      padding-right: 12.5px
+
+  .hdf-gap30
+    margin-left: -15px
+    margin-right: -15px
+    & > *
+      padding-bottom: 0
+      padding-left: 15px
+      padding-right: 15px
+
+  .hdf-gap40
+    margin-left: -20px
+    margin-right: -20px
+    & > *
+      padding-bottom: 0
+      padding-left: 20px
+      padding-right: 20px
+
+  .hdf-gap50
+    margin-left: -25px
+    margin-right: -25px
+    & > *
+      padding-bottom: 0
+      padding-left: 25px
+      padding-right: 25px
+
+
+  
+  .hdf-gap0b
+    margin-left: 0
+    margin-right: 0
+    & > *
+      padding-bottom: 0
+      padding-left: 0
+      padding-right: 0
+
+  .hdf-gap5b
+    margin-left: -2.5px
+    margin-right: -2.5px
+    & > *
+      padding-bottom: 5px
+      padding-left: 2.5px
+      padding-right: 2.5px
+
+  .hdf-gap10b
+    margin-left: -5px
+    margin-right: -5px
+    & > *
+      padding-bottom: 10px
+      padding-left: 5px
+      padding-right: 5px
+
+  .hdf-gap15b
+    margin-left: -7.5px
+    margin-right: -7.5px
+    & > *
+      padding-bottom: 15px
+      padding-left: 7.5px
+      padding-right: 7.5px
+
+  .hdf-gap20b
+    margin-left: -10px
+    margin-right: -10px
+    & > *
+      padding-bottom: 20px
+      padding-left: 10px
+      padding-right: 10px
+
+  .hdf-gap25b
+    margin-left: -12.5px
+    margin-right: -12.5px
+    & > *
+      padding-bottom: 25px
+      padding-left: 12.5px
+      padding-right: 12.5px
+
+  .hdf-gap30b
+    margin-left: -15px
+    margin-right: -15px
+    & > *
+      padding-bottom: 30px
+      padding-left: 15px
+      padding-right: 15px
+
+  .hdf-gap40b
+    margin-left: -20px
+    margin-right: -20px
+    & > *
+      padding-bottom: 40px
+      padding-left: 20px
+      padding-right: 20px
+
+  .hdf-gap50b
+    margin-left: -25px
+    margin-right: -25px
+    & > *
+      padding-bottom: 50px
+      padding-left: 25px
+      padding-right: 25px
+
+
+
+  .hdf-row
+    flex-direction: row
+
+  .hdf-rowrev
+    flex-direction: row-reverse
+  
+  .hdf-col
+    flex-direction: column
+
+  .hdf-colrev
+    flex-direction: column-reverse
+
+ 
+
+  .hdf-dn
+    display: none
+  .hdf-db
+    display: block
+  .hdf-dib
+    display: inline-block
+
+
+
+  .hdf-container-half--disabled
+    width: 100%
+
+
 
 /* // */
 // Media for big tablet size
 /* // */
 
-@media (max-width: 991px)
+@media (max-width: $btb)
 
   .btb-tl
     text-align: left
@@ -1752,24 +2576,24 @@ img.cover
 
 
 
-  .btb-cols-1 > *
+  .btb-cols1 > *
     width: 100%
-  .btb-cols-2 > *
+  .btb-cols2 > *
     width: 50%
-  .btb-cols-3 > *
+  .btb-cols3 > *
     width: 33.3%
-  .btb-cols-4 > *
+  .btb-cols4 > *
     width: 25%
-  .btb-cols-5 > *
+  .btb-cols5 > *
     width: 20%
-  .btb-cols-6 > *
+  .btb-cols6 > *
     width: 16.66%
-  .btb-cols-7 > *
+  .btb-cols7 > *
     width: 14.2%
 
 
     
-  .btb-gap-0
+  .btb-gap0
     margin-left: 0
     margin-right: 0
     & > *
@@ -1777,7 +2601,7 @@ img.cover
       padding-left: 0
       padding-right: 0
 
-  .btb-gap-5
+  .btb-gap5
     margin-left: -2.5px
     margin-right: -2.5px
     & > *
@@ -1785,7 +2609,7 @@ img.cover
       padding-left: 2.5px
       padding-right: 2.5px
 
-  .btb-gap-10
+  .btb-gap10
     margin-left: -5px
     margin-right: -5px
     & > *
@@ -1793,7 +2617,7 @@ img.cover
       padding-left: 5px
       padding-right: 5px
 
-  .btb-gap-15
+  .btb-gap15
     margin-left: -7.5px
     margin-right: -7.5px
     & > *
@@ -1801,7 +2625,7 @@ img.cover
       padding-left: 7.5px
       padding-right: 7.5px
 
-  .btb-gap-20
+  .btb-gap20
     margin-left: -10px
     margin-right: -10px
     & > *
@@ -1809,7 +2633,7 @@ img.cover
       padding-left: 10px
       padding-right: 10px
 
-  .btb-gap-25
+  .btb-gap25
     margin-left: -12.5px
     margin-right: -12.5px
     & > *
@@ -1817,7 +2641,7 @@ img.cover
       padding-left: 12.5px
       padding-right: 12.5px
 
-  .btb-gap-30
+  .btb-gap30
     margin-left: -15px
     margin-right: -15px
     & > *
@@ -1825,7 +2649,7 @@ img.cover
       padding-left: 15px
       padding-right: 15px
 
-  .btb-gap-40
+  .btb-gap40
     margin-left: -20px
     margin-right: -20px
     & > *
@@ -1833,7 +2657,7 @@ img.cover
       padding-left: 20px
       padding-right: 20px
 
-  .btb-gap-50
+  .btb-gap50
     margin-left: -25px
     margin-right: -25px
     & > *
@@ -1843,7 +2667,7 @@ img.cover
 
   
 
-  .btb-gap-0-b
+  .btb-gap0b
     margin-left: 0
     margin-right: 0
     & > *
@@ -1851,7 +2675,7 @@ img.cover
       padding-left: 0
       padding-right: 0
 
-  .btb-gap-5-b
+  .btb-gap5b
     margin-left: -2.5px
     margin-right: -2.5px
     & > *
@@ -1859,7 +2683,7 @@ img.cover
       padding-left: 2.5px
       padding-right: 2.5px
 
-  .btb-gap-10-b
+  .btb-gap10b
     margin-left: -5px
     margin-right: -5px
     & > *
@@ -1867,7 +2691,7 @@ img.cover
       padding-left: 5px
       padding-right: 5px
 
-  .btb-gap-15-b
+  .btb-gap15b
     margin-left: -7.5px
     margin-right: -7.5px
     & > *
@@ -1875,7 +2699,7 @@ img.cover
       padding-left: 7.5px
       padding-right: 7.5px
 
-  .btb-gap-20-b
+  .btb-gap20b
     margin-left: -10px
     margin-right: -10px
     & > *
@@ -1883,7 +2707,7 @@ img.cover
       padding-left: 10px
       padding-right: 10px
 
-  .btb-gap-25-b
+  .btb-gap25b
     margin-left: -12.5px
     margin-right: -12.5px
     & > *
@@ -1891,7 +2715,7 @@ img.cover
       padding-left: 12.5px
       padding-right: 12.5px
 
-  .btb-gap-30-b
+  .btb-gap30b
     margin-left: -15px
     margin-right: -15px
     & > *
@@ -1899,7 +2723,7 @@ img.cover
       padding-left: 15px
       padding-right: 15px
 
-  .btb-gap-40-b
+  .btb-gap40b
     margin-left: -20px
     margin-right: -20px
     & > *
@@ -1907,7 +2731,7 @@ img.cover
       padding-left: 20px
       padding-right: 20px
 
-  .btb-gap-50-b
+  .btb-gap50b
     margin-left: -25px
     margin-right: -25px
     & > *
@@ -1940,6 +2764,11 @@ img.cover
 
 
 
+  .btb-container-half--disabled
+    width: 100%
+
+
+
   @supports (-webkit-touch-callout: none)
     // CSS specific to iOS devices
     .bkg-fixed
@@ -1951,7 +2780,7 @@ img.cover
 // Media for small tablet size
 /* // */
 
-@media (max-width: 767px)
+@media (max-width: $stb)
 
   .stb-tl
     text-align: left
@@ -2129,24 +2958,24 @@ img.cover
 
   
 
-  .stb-cols-1 > *
+  .stb-cols1 > *
     width: 100%
-  .stb-cols-2 > *
+  .stb-cols2 > *
     width: 50%
-  .stb-cols-3 > *
+  .stb-cols3 > *
     width: 33.3%
-  .stb-cols-4 > *
+  .stb-cols4 > *
     width: 25%
-  .stb-cols-5 > *
+  .stb-cols5 > *
     width: 20%
-  .stb-cols-6 > *
+  .stb-cols6 > *
     width: 16.66%
-  .stb-cols-7 > *
+  .stb-cols7 > *
     width: 14.2%
 
 
 
-  .stb-gap-0
+  .stb-gap0
     margin-left: 0
     margin-right: 0
     & > *
@@ -2154,7 +2983,7 @@ img.cover
       padding-left: 0
       padding-right: 0
 
-  .stb-gap-5
+  .stb-gap5
     margin-left: -2.5px
     margin-right: -2.5px
     & > *
@@ -2162,7 +2991,7 @@ img.cover
       padding-left: 2.5px
       padding-right: 2.5px
 
-  .stb-gap-10
+  .stb-gap10
     margin-left: -5px
     margin-right: -5px
     & > *
@@ -2170,7 +2999,7 @@ img.cover
       padding-left: 5px
       padding-right: 5px
 
-  .stb-gap-15
+  .stb-gap15
     margin-left: -7.5px
     margin-right: -7.5px
     & > *
@@ -2178,7 +3007,7 @@ img.cover
       padding-left: 7.5px
       padding-right: 7.5px
 
-  .stb-gap-20
+  .stb-gap20
     margin-left: -10px
     margin-right: -10px
     & > *
@@ -2186,7 +3015,7 @@ img.cover
       padding-left: 10px
       padding-right: 10px
 
-  .stb-gap-25
+  .stb-gap25
     margin-left: -12.5px
     margin-right: -12.5px
     & > *
@@ -2194,7 +3023,7 @@ img.cover
       padding-left: 12.5px
       padding-right: 12.5px
 
-  .stb-gap-30
+  .stb-gap30
     margin-left: -15px
     margin-right: -15px
     & > *
@@ -2202,7 +3031,7 @@ img.cover
       padding-left: 15px
       padding-right: 15px
 
-  .stb-gap-40
+  .stb-gap40
     margin-left: -20px
     margin-right: -20px
     & > *
@@ -2210,7 +3039,7 @@ img.cover
       padding-left: 20px
       padding-right: 20px
 
-  .stb-gap-50
+  .stb-gap50
     margin-left: -25px
     margin-right: -25px
     & > *
@@ -2220,7 +3049,7 @@ img.cover
 
 
   
-  .stb-gap-0-b
+  .stb-gap0b
     margin-left: 0
     margin-right: 0
     & > *
@@ -2228,7 +3057,7 @@ img.cover
       padding-left: 0
       padding-right: 0
 
-  .stb-gap-5-b
+  .stb-gap5b
     margin-left: -2.5px
     margin-right: -2.5px
     & > *
@@ -2236,7 +3065,7 @@ img.cover
       padding-left: 2.5px
       padding-right: 2.5px
 
-  .stb-gap-10-b
+  .stb-gap10b
     margin-left: -5px
     margin-right: -5px
     & > *
@@ -2244,7 +3073,7 @@ img.cover
       padding-left: 5px
       padding-right: 5px
 
-  .stb-gap-15-b
+  .stb-gap15b
     margin-left: -7.5px
     margin-right: -7.5px
     & > *
@@ -2252,7 +3081,7 @@ img.cover
       padding-left: 7.5px
       padding-right: 7.5px
 
-  .stb-gap-20-b
+  .stb-gap20b
     margin-left: -10px
     margin-right: -10px
     & > *
@@ -2260,7 +3089,7 @@ img.cover
       padding-left: 10px
       padding-right: 10px
 
-  .stb-gap-25-b
+  .stb-gap25b
     margin-left: -12.5px
     margin-right: -12.5px
     & > *
@@ -2268,7 +3097,7 @@ img.cover
       padding-left: 12.5px
       padding-right: 12.5px
 
-  .stb-gap-30-b
+  .stb-gap30b
     margin-left: -15px
     margin-right: -15px
     & > *
@@ -2276,7 +3105,7 @@ img.cover
       padding-left: 15px
       padding-right: 15px
 
-  .stb-gap-40-b
+  .stb-gap40b
     margin-left: -20px
     margin-right: -20px
     & > *
@@ -2284,7 +3113,7 @@ img.cover
       padding-left: 20px
       padding-right: 20px
 
-  .stb-gap-50-b
+  .stb-gap50b
     margin-left: -25px
     margin-right: -25px
     & > *
@@ -2317,11 +3146,16 @@ img.cover
 
 
 
+  .stb-container-half--disabled
+    width: 100%
+
+
+
 /* // */
 // Media for mobile size
 /* // */
 
-@media (max-width: 450px)
+@media (max-width: $mbl)
 
   .mbl-tl
     text-align: left
@@ -2499,24 +3333,24 @@ img.cover
 
 
 
-  .mbl-cols-1 > *
+  .mbl-cols1 > *
     width: 100%
-  .mbl-cols-2 > *
+  .mbl-cols2 > *
     width: 50%
-  .mbl-cols-3 > *
+  .mbl-cols3 > *
     width: 33.3%
-  .mbl-cols-4 > *
+  .mbl-cols4 > *
     width: 25%
-  .mbl-cols-5 > *
+  .mbl-cols5 > *
     width: 20%
-  .mbl-cols-6 > *
+  .mbl-cols6 > *
     width: 16.66%
-  .mbl-cols-7 > *
+  .mbl-cols7 > *
     width: 14.2%
 
 
 
-  .mbl-gap-0
+  .mbl-gap0
     margin-left: 0
     margin-right: 0
     & > *
@@ -2524,7 +3358,7 @@ img.cover
       padding-left: 0
       padding-right: 0
 
-  .mbl-gap-5
+  .mbl-gap5
     margin-left: -2.5px
     margin-right: -2.5px
     & > *
@@ -2532,7 +3366,7 @@ img.cover
       padding-left: 2.5px
       padding-right: 2.5px
 
-  .mbl-gap-10
+  .mbl-gap10
     margin-left: -5px
     margin-right: -5px
     & > *
@@ -2540,7 +3374,7 @@ img.cover
       padding-left: 5px
       padding-right: 5px
 
-  .mbl-gap-15
+  .mbl-gap15
     margin-left: -7.5px
     margin-right: -7.5px
     & > *
@@ -2548,7 +3382,7 @@ img.cover
       padding-left: 7.5px
       padding-right: 7.5px
 
-  .mbl-gap-20
+  .mbl-gap20
     margin-left: -10px
     margin-right: -10px
     & > *
@@ -2556,7 +3390,7 @@ img.cover
       padding-left: 10px
       padding-right: 10px
 
-  .mbl-gap-25
+  .mbl-gap25
     margin-left: -12.5px
     margin-right: -12.5px
     & > *
@@ -2564,7 +3398,7 @@ img.cover
       padding-left: 12.5px
       padding-right: 12.5px
 
-  .mbl-gap-30
+  .mbl-gap30
     margin-left: -15px
     margin-right: -15px
     & > *
@@ -2572,7 +3406,7 @@ img.cover
       padding-left: 15px
       padding-right: 15px
 
-  .mbl-gap-40
+  .mbl-gap40
     margin-left: -20px
     margin-right: -20px
     & > *
@@ -2580,7 +3414,7 @@ img.cover
       padding-left: 20px
       padding-right: 20px
 
-  .mbl-gap-50
+  .mbl-gap50
     margin-left: -25px
     margin-right: -25px
     & > *
@@ -2590,7 +3424,7 @@ img.cover
 
   
 
-  .mbl-gap-0-b
+  .mbl-gap0b
     margin-left: 0
     margin-right: 0
     & > *
@@ -2598,7 +3432,7 @@ img.cover
       padding-left: 0
       padding-right: 0
 
-  .mbl-gap-5-b
+  .mbl-gap5b
     margin-left: -2.5px
     margin-right: -2.5px
     & > *
@@ -2606,7 +3440,7 @@ img.cover
       padding-left: 2.5px
       padding-right: 2.5px
 
-  .mbl-gap-10-b
+  .mbl-gap10b
     margin-left: -5px
     margin-right: -5px
     & > *
@@ -2614,7 +3448,7 @@ img.cover
       padding-left: 5px
       padding-right: 5px
 
-  .mbl-gap-15-b
+  .mbl-gap15b
     margin-left: -7.5px
     margin-right: -7.5px
     & > *
@@ -2622,7 +3456,7 @@ img.cover
       padding-left: 7.5px
       padding-right: 7.5px
 
-  .mbl-gap-20-b
+  .mbl-gap20b
     margin-left: -10px
     margin-right: -10px
     & > *
@@ -2630,7 +3464,7 @@ img.cover
       padding-left: 10px
       padding-right: 10px
 
-  .mbl-gap-25-b
+  .mbl-gap25b
     margin-left: -12.5px
     margin-right: -12.5px
     & > *
@@ -2638,7 +3472,7 @@ img.cover
       padding-left: 12.5px
       padding-right: 12.5px
 
-  .mbl-gap-30-b
+  .mbl-gap30b
     margin-left: -15px
     margin-right: -15px
     & > *
@@ -2646,7 +3480,7 @@ img.cover
       padding-left: 15px
       padding-right: 15px
 
-  .mbl-gap-40-b
+  .mbl-gap40b
     margin-left: -20px
     margin-right: -20px
     & > *
@@ -2654,7 +3488,7 @@ img.cover
       padding-left: 20px
       padding-right: 20px
 
-  .mbl-gap-50-b
+  .mbl-gap50b
     margin-left: -25px
     margin-right: -25px
     & > *
@@ -2684,3 +3518,8 @@ img.cover
     display: block
   .mbl-dib
     display: inline-block
+
+
+
+  .mbl-container-half--disabled
+    width: 100%
